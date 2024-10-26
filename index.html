@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Poll</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.option {
+    margin-top: 10px;
+}
+
+    </style>
+
+</head>
+<body>
+    <div id="loginPage" class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter your name" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="pollCreationPage" class="container" style="display: none;">
+        <h2>Create Poll</h2>
+        <form id="pollForm">
+            <input type="text" id="pollQuestion" placeholder="Enter your question" required>
+            <div id="optionsContainer">
+                <input type="text" class="option" placeholder="Option 1" required>
+            </div>
+            <button type="button" id="addOption">Add Option</button>
+            <button type="submit">Create Poll</button>
+        </form>
+    </div>
+
+    <div id="pollDisplayPage" class="container" style="display: none;">
+        <h2 id="pollQuestionDisplay"></h2>
+        <div id="pollOptions"></div>
+        <button id="voteButton">Vote</button>
+        <div id="resultDisplay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
